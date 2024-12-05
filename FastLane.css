@@ -423,3 +423,136 @@ video {
 .footer-bottom p {
   color: #bbb;
 }
+
+
+
+/* Ajustes para pantallas con max-width: 768px */
+@media (max-width: 768px) {
+  /* NavBar */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .search-input {
+    width: 80%; /* Reducir el tamaño del input */
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  /* Contenedor principal */
+  .content {
+    padding: 20px; /* Reducir el padding superior */
+  }
+
+  /* Video */
+  .video-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  video {
+    width: 100%; /* Ajustar video al ancho disponible */
+  }
+
+  /* Botones de filtro */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Cards */
+  .cards-section {
+    width: 100%;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .game-card-pixel {
+    width: 100%; /* Ajustar el ancho de las cards */
+  }
+}
+
+/* Ajustes para pantallas con max-width: 700px */
+@media (max-width: 700px) {
+  /* NavBar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  /* Contenedor del carrito */
+  .cart-container {
+    width: 90%; /* Reducir el ancho del carrito */
+    top: 20px; /* Ajustar posición en pantallas pequeñas */
+  }
+
+  .cart-items {
+    grid-template-columns: repeat(1, 1fr); /* Items en una sola columna */
+  }
+
+  /* Filtros y botones */
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    width: 80%; /* Botones más grandes para pantallas pequeñas */
+  }
+
+  /* Ajustar texto y elementos */
+  h1,
+  h2 {
+    font-size: 1.5rem; /* Reducir tamaño de títulos */
+  }
+
+  .add-to-cart {
+    font-size: 0.9rem; /* Ajustar tamaño del botón */
+    padding: 8px 12px;
+  }
+
+  /* Cards */
+  .card-container {
+    grid-template-columns: 1fr; /* Una columna para las tarjetas */
+  }
+
+  .game-card-pixel {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
