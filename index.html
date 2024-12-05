@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LevelUpStore</title>
+    <link rel="stylesheet" href="FastLane.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./Imagenes/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./Imagenes/logo.png" alt="Logo" />
+      </div>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Buscar..." />
+      </div>
+      <div class="nav-buttons">
+        <div class="language-dropdown">
+          <button id="currency-selector">Seleccionar Moneda</button>
+          <div class="language-list">
+            <button data-currency="USD">USD</button>
+            <button data-currency="EUR">EUR</button>
+            <button data-currency="GBP">GBP</button>
+            <button data-currency="ARS">ARS</button>
+            <button data-currency="JPY">JPY</button>
+          </div>
+        </div>
+        <button id="cart-button" class="nav-button">Ver Carrito</button>
+      </div>
+    </nav>
+
+    <div id="loader" class="loader">
+      <img src="./Imagenes/thank-you-prisoner.gif" alt="Cargando..." />
+    </div>
+
+    <div class="content">
+      <h1>Bienvenido a LevelUpStore🎮</h1>
+
+      <div class="video-container">
+        <video controls>
+          <source
+            src="./Imagenes/Encuentra tu próxima victoria. (1).mp4"
+            type="video/mp4"
+          />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+      <!-- Filtros de plataformas -->
+      <div class="filter-container">
+        <button class="filter-btn">PlayStation</button>
+        <button class="filter-btn">PC</button>
+        <button class="filter-btn">Xbox</button>
+        <button class="filter-btn">Nintendo</button>
+        <button id="clear-filter-button">Quitar Filtro</button>
+      </div>
+
+      <!-- Cards de ofertas y juegos centradas -->
+      <div class="cards-section">
+        <h2>Ofertas</h2>
+        <div class="card-container ofertas">
+          <!-- Aquí van las ofertas dinámicas si se agregan -->
+        </div>
+
+        <h2>Juegos</h2>
+        <div class="card-container juegos">
+          <!-- Cards generadas dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor del carrito (inicialmente oculto) -->
+    <div class="cart-container" style="display: none">
+      <button class="close-cart">Cerrar</button>
+      <h2>Tu Carrito</h2>
+      <div class="cart-items">
+        <!-- Aquí se añadirán los productos al carrito -->
+      </div>
+      <button id="empty-cart-button">Vaciar Carrito</button>
+      <button id="buy-button">Comprar</button>
+
+      <!-- Sección para el precio total del carrito -->
+      <div class="cart-total-price">
+        <!-- El precio total será insertado aquí dinámicamente -->
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Acerca de nosotros</h3>
+          <p class="footer-text">
+            Somos una tienda de juegos que ofrece una experiencia única en cada
+            juego.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Enlaces rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Juegos</a></li>
+            <li><a href="#">Carrito</a></li>
+            <li><a href="#">Contáctanos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Síguenos</h3>
+          <div class="footer-social">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="FastLane.js"></script>
+  </body>
+</html>

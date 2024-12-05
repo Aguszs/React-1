@@ -1,0 +1,425 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Loader */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegurarse de que se muestre sobre todo el contenido */
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Color de fondo */
+  border-top: 8px solid #3498db; /* Color del borde superior para el spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Animación de rotación */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* NavBar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.logo img {
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.search-container {
+  flex: 1;
+  text-align: center;
+}
+
+.search-input {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: width 0.4s ease, border-color 0.4s ease;
+}
+
+.search-input:focus {
+  width: 70%;
+  border-color: #007bff;
+  outline: none;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos del dropdown de monedas */
+.language-dropdown {
+  position: relative;
+}
+
+.language-list {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 5px;
+  width: 150px;
+}
+
+.language-list button {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.language-list button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mostrar el dropdown al hacer clic */
+.language-dropdown .language-list.active {
+  display: block;
+}
+
+/* Espaciado para el contenido principal */
+.content {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Video */
+.video-container {
+  margin-top: 20px;
+}
+
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Botón de añadir al carrito */
+.add-to-cart-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor del carrito */
+.cart-container {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y transparente */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto; /* Hacer que el carrito sea desplazable si tiene muchos items */
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.cart-item img {
+  width: 50px; /* Tamaño de las miniaturas */
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-item-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cart-item-price {
+  font-size: 0.9rem;
+  color: #ffcc00; /* Color de texto retro */
+}
+
+/* Botones de acción en el carrito */
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Estilos para botones de acción en el carrito */
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.green:hover {
+  background-color: darkgreen;
+}
+
+.red:hover {
+  background-color: darkred;
+}
+
+/* Contenedor de las cards */
+.cards-section {
+  width: 80%; /* Ajusta el tamaño de las cards */
+  max-width: 1200px; /* Limita el tamaño máximo */
+  margin: 0 auto; /* Centra el contenedor */
+  padding-top: 40px;
+  text-align: center;
+}
+
+/* Estilos para cada tarjeta */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Ajusta el tamaño mínimo de las tarjetas */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px; /* Espacio interno del contenedor */
+  justify-items: center; /* Centra las cards dentro de cada columna */
+}
+
+/* Estilos para las tarjetas de juego */
+.game-card-pixel {
+  width: 300px;
+  background: repeating-linear-gradient(
+    45deg,
+    #111,
+    #111 10px,
+    #222 10px,
+    #222 20px
+  );
+  border: 8px solid #ffcc00; /* Borde pixelado */
+  border-radius: 0; /* Bordes afilados para estilo retro */
+  box-shadow: 0 8px 0 #333, 0 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-align: center;
+  font-family: "Press Start 2P", sans-serif; /* Fuente pixelada */
+  color: #fff;
+}
+
+/* Sección de imagen */
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 8px solid #ffcc00; /* Coincide con el borde de la tarjeta */
+}
+
+/* Sección de descripción */
+.card-description {
+  padding: 15px;
+  background: #1b1b1b; /* Fondo oscuro pixelado */
+  text-transform: uppercase;
+}
+
+/* Título */
+.card-description h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #ffcc00; /* Texto retro amarillo */
+}
+
+/* Texto de descripción */
+.card-description p {
+  font-size: 0.8em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Botón de añadir al carrito */
+.add-to-cart {
+  background: #ff5555; /* Rojo retro brillante */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: 0 4px 0 #aa0000; /* Profundidad retro */
+}
+
+.add-to-cart:hover {
+  background: #ff2222; /* Cambio de color en hover */
+  transform: scale(1.05); /* Efecto de ampliación en hover */
+}
+
+.add-to-cart:active {
+  box-shadow: 0 2px 0 #aa0000; /* Efecto retro en clic */
+}
+/* Footer */
+.footer {
+  background-color: #111;
+  color: #fff;
+  font-family: "Press Start 2P", sans-serif;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links ul li {
+  margin: 5px 0;
+}
+
+.links ul li a {
+  color: #ffcc00; /* Color retro */
+  text-decoration: none;
+}
+
+.links ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons .icon {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1); /* Para que los iconos sean blancos */
+}
+
+.footer-bottom {
+  background-color: #222;
+  padding: 10px 0;
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  color: #bbb;
+}
